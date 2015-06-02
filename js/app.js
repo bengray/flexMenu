@@ -66,7 +66,7 @@ require(["jquery"], function ($) {
 			}, animationSpeed);
 		}
 
-});
+	});
 
 	///////////////////////////
 	///  MOUSEOVER ACTIONS  ///
