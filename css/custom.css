@@ -1,0 +1,81 @@
+#flyout {
+	margin: 0;
+	padding: 0;
+	left: 0;
+	position: absolute;
+}
+
+#toggleButton {
+	position: absolute;
+	z-index: 9999;
+	height: 25px;
+	width: 25px;
+	top: 0px;
+	left: 0px;
+	padding-left: 15px;
+	font-size: 32px;
+	color: gray;
+	cursor: pointer;
+}
+
+
+
+/* .mainMenu and .subMenu have some things in common */
+.mainMenu,
+.subMenu {
+	position: absolute;
+	width: 350px;
+	height: 600px;
+	color: white;
+	left: -350px;
+	top: 35px;
+	margin: 0;
+	padding: 0;
+}
+
+/* now the differences between main and sub menus */
+.mainMenu {
+	z-index: 9999;
+	background: #222;	
+}
+
+.subMenu {
+	z-index: 9998;
+	background: #333;
+}
+
+
+
+
+.mainMenu a,
+.subMenu a {
+	display: block;
+	width: 330px;
+	color: gray;
+	padding: 10px;
+	text-decoration: none;
+	border-bottom: 1px dotted gray;
+}
+
+.mainMenu a:hover,
+.subMenu a:hover {
+	color: white;
+}
+
+.fa-angle-right {
+	float: right;
+}
+
+.subMenu p {
+	line-height: 25px;
+	display: block;
+	padding: 0 10px 0;
+}
+
+.subMenu form {
+	padding: 10px 0 0 25px;	
+}
+
+.subMenu input {
+	margin-bottom: 15px;
+}
