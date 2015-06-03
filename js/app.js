@@ -12,16 +12,23 @@ require(["jquery"], function ($) {
 	$("head").append("<link href='/flexmenu/fonts/font-awesome/css/font-awesome.min.css' rel='stylesheet'>");
 	$("head").append("<link href='/flexmenu/css/custom.css' rel='stylesheet'>");
 
-	// Make an ajax call to the menu Builder, get the HTML back and append it to the document body
-	$.ajax({
+	// Make an ajax call to the menu Builder, get the HTML back
+	var getMenuHTML = $.ajax({
 		url: "/flexmenu/menuBuilder.php",
 		data: {"userName": userName},
 		context: document.body
-	}).done(function(data) {
-		$(this).prepend(data);
+	});
+
+	// Prepend the HTML to the body
+	getMenuHTML.done(function(data) {
+		$(this).prepend(data); // "data" will be the complete HTML markup
+	});
+
+	// Then add some functionality to the Markup
+	getMenuHTML.then(function() {
 		addMenuFunctionality();
 	});
-	
+
 	function addMenuFunctionality() {
 	
 		var mainMenu = $(".mainMenu");
